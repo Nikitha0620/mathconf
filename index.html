@@ -36,8 +36,9 @@
                     <li><a href="#registration">Registration & Timeline</a></li>
                     <li><a href="#payment">Payment</a></li>
                     <li><a href="#publication">Publication</a></li>
-                    <li><a href="#committee">Committee</a></li>
                     <li><a href="#resources">Resource Persons</a></li>
+                    <li><a href="#committee">Committee</a></li>
+
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
@@ -81,6 +82,30 @@
                 <p><i class="fa-solid fa-calendar-days"></i> 09–10 July, 2026</p>
                 <p><i class="fa-solid fa-location-dot"></i> Madurai</p>
             </div>
+            
+            <!-- Abstract Submission Timer -->
+            <div class="banner-timer-section">
+                <div class="timer-label">Abstract Submission Closes In</div>
+                <div class="countdown-timer">
+                    <div class="timer-item">
+                        <span class="timer-value" id="days">75</span>
+                        <span class="timer-unit">Days</span>
+                    </div>
+                    <div class="timer-item">
+                        <span class="timer-value" id="hours">14</span>
+                        <span class="timer-unit">Hours</span>
+                    </div>
+                    <div class="timer-item">
+                        <span class="timer-value" id="minutes">32</span>
+                        <span class="timer-unit">Minutes</span>
+                    </div>
+                    <div class="timer-item">
+                        <span class="timer-value" id="seconds">45</span>
+                        <span class="timer-unit">Seconds</span>
+                    </div>
+                </div>
+                <button class="btn-scroll-cfp" onclick="document.getElementById('cfp').scrollIntoView({behavior: 'smooth'})">View Details & Submit</button>
+            </div>
         </div>
     </div>
 
@@ -107,7 +132,7 @@
                     <img src="assets/images/tc.jpeg" alt="Thiagarajar College (Autonomous)" class="institute-image">
 
                     <h3>Thiagarajar College (Autonomous)</h3>
-                    <p>Thiagarajar College (TC), was founded on 7th July 1949 by Kalaithanthai Karumuttu Thiagarajan Chettiar, a great philanthropist and visionary of 20th century. The college which started with only three undergraduate programmes, has now significantly expanded its academic excellence by offering 31 UG, 15 PG and 10 Ph.D. programmes. Recognizing the high standards of the institution in the accreditation cycles, NAAC has extended the accreditation validity period from 5 years to 7 years. The college has also demonstrated consistent improvement in NIRF rankings scaling up from 44th in 2018 to 20th in 2025.</p>
+                    <p>Thiagarajar College (TA), was founded on 7th July 1949 by Kalaithanthai Karumuttu Thiagarajan Chettiar, a great philanthropist and visionary of 20th century. The college which started with only three undergraduate programmes, has now significantly expanded its academic excellence by offering 31 UG, 15 PG and 10 Ph.D. programmes. Recognizing the high standards of the institution in the accreditation cycles, NAAC has extended the accreditation validity period from 5 years to 7 years. The college has also demonstrated consistent improvement in NIRF rankings scaling up from 44th in 2018 to 20th in 2025.</p>
                 </div>
             </div>
         </div>
@@ -126,7 +151,7 @@
                 </div>
                 <div class="col-md-6">
                     <div class="dept-card">
-                        <h4>TC - Department of Mathematics</h4>
+                        <h4>TA - Department of Mathematics</h4>
                         <p>The department of Mathematics was established in the year 1949 and upgraded as a postgraduate department in 1959. The department of Mathematics comprises 22 highly qualified and dedicated faculty members specialized in diverse areas such as Graph theory, Analysis, Algorithmic Graph Theory, Differential Equations and Topology.</p>
                     </div>
                 </div>
@@ -477,7 +502,7 @@
     </section>
 
     <!-- Advisory Committee Section -->
-    <section id="advisory" class="committee-section py-5">
+    <section id="advisory" class="committee-section advisory-committee py-5">
         <div class="container">
             <h2 class="section-heading text-center">Advisory Committee</h2>
 
@@ -670,6 +695,34 @@
                 ride: 'carousel',
                 touch: true
             });
+            
+            // Countdown Timer for Abstract Submission
+            function updateCountdown() {
+                const deadline = new Date('March 8, 2026').getTime();
+                const now = new Date().getTime();
+                const distance = deadline - now;
+
+                if (distance > 0) {
+                    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                    document.getElementById('days').textContent = String(days).padStart(2, '0');
+                    document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+                    document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+                    document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+                } else {
+                    document.getElementById('days').textContent = '00';
+                    document.getElementById('hours').textContent = '00';
+                    document.getElementById('minutes').textContent = '00';
+                    document.getElementById('seconds').textContent = '00';
+                }
+            }
+            
+            // Update countdown every second
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
         });
     </script>
 </body>
