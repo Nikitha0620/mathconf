@@ -84,7 +84,7 @@ body {
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 5px 30px;
+    padding: 0 30px;
     gap: 80px;
 }
 
@@ -92,12 +92,12 @@ body {
     display: flex;
     gap: 30px;
     align-items: center;
-    padding: 5px 15px;
+    padding: 0;
     border-radius: 50px;
 }
 
 .logos-left img {
-    height: 50px;
+    height: 100px;
     width: auto;
     object-fit: contain;
 }
@@ -146,6 +146,9 @@ body {
     border-bottom: 4px solid var(--accent-gold);
     padding: 12px 0;
     box-shadow: 0 4px 12px rgba(128, 0, 0, 0.15);
+    min-height: 50px;
+    display: flex;
+    align-items: center;
 }
 
 .navbar-sticky .container {
@@ -179,7 +182,7 @@ body {
 
 .navbar-sticky nav a:hover {
     color: var(--soft-white);
-    border-bottom: 2px solid var(--soft-white);
+    border-bottom: 3px solid var(--soft-white);
 }
 
 /* ============================================
@@ -762,7 +765,7 @@ footer .footer-gold {
     }
 
     .logos-left img {
-        height: 45px;
+        height: 80px;
     }
 
     .conf-title h1 {
@@ -1016,7 +1019,7 @@ footer .footer-gold {
     }
 
     .navbar-sticky nav ul li a {
-        padding: 3px 6px;
+        padding: 8px 6px;
     }
 
     .py-5 {
@@ -1145,7 +1148,7 @@ footer .footer-gold {
     }
 
     .logos-left img {
-        height: 35px;
+        height: 60px;
     }
 /* ============================================
    Utility Classes
@@ -2221,7 +2224,7 @@ footer .footer-gold {
     }
 
     .navbar-sticky nav ul li a {
-        padding: 3px 6px;
+        padding: 8px 6px;
     }
 
     .py-5 {
