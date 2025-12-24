@@ -45,7 +45,7 @@ body {
     box-shadow: 0 4px 16px rgba(128, 0, 0, 0.08);
     position: sticky;
     top: 0;
-    z-index: 999;
+    z-index: 1000;
 }
 
 .logo-bar-sticky::after {
@@ -140,8 +140,8 @@ body {
 
 .navbar-sticky {
     position: sticky;
-    top: 98px;
-    z-index: 998;
+    top: 75px;
+    z-index: 999;
     background: linear-gradient(180deg, #2d2424 0%, #1f1818 100%);
     border-bottom: 4px solid var(--accent-gold);
     padding: 12px 0;
@@ -183,43 +183,123 @@ body {
 }
 
 /* ============================================
-   Hero Banner Section
+   Hero Banner / Carousel Section
    ============================================ */
 
-.hero-banner {
+.hero-carousel {
     position: relative;
     height: 80vh;
-    background: linear-gradient(135deg, #800000 0%, #5c0000 50%, #2d2424 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
     overflow: hidden;
-    border-bottom: 5px solid var(--accent-gold);
 }
 
-.banner-overlay {
-    display: none;
+.carousel-image {
+    width: 100%;
+    height: 80vh;
+    object-fit: cover;
+    filter: brightness(70%) contrast(105%);
+}
+
+.carousel-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.4),
+        rgba(0, 0, 0, 0.6)
+    );
+    z-index: 1;
 }
 
 .banner-content {
-    position: relative;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     z-index: 2;
     text-align: center;
-    color: var(--soft-white);
-    max-width: 1100px;
-    padding: 0 30px;
+    color: #fff;
+    padding: 20px;
+    max-width: 1200px;
+    width: 90%;
 }
 
 .banner-title {
     font-family: 'Cinzel', serif;
-    font-size: 2.8rem;
-    color: var(--accent-gold);
+    font-size: 3rem;
+    color: #d4af37;
     font-weight: 700;
-    margin-bottom: 30px;
-    text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.8);
+    margin-bottom: 20px;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
     letter-spacing: 2px;
     line-height: 1.3;
-    word-spacing: 0.1em;
+}
+
+.banner-details {
+    font-family: 'Lora', serif;
+    font-size: 1.1rem;
+    color: #fff;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+.banner-details p {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+.banner-details i {
+    color: #ffd369;
+    margin-right: 8px;
+}
+
+@media (max-width: 768px) {
+    .banner-title {
+        font-size: 2rem;
+    }
+
+    .banner-details p {
+        font-size: 1rem;
+    }
+}
+
+/* Carousel Control Buttons */
+.carousel-control-prev,
+.carousel-control-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    z-index: 3;
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.4) 0%, rgba(212, 175, 55, 0.2) 100%);
+    border: 2px solid #d4af37;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    opacity: 0.8;
+}
+
+.carousel-control-prev {
+    left: 20px;
+}
+
+.carousel-control-next {
+    right: 20px;
+}
+
+.carousel-control-prev-icon {
+    width: 24px;
+    height: 24px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23d4af37'%3E%3Cpath d='M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z'/%3E%3C/svg%3E") no-repeat center;
+    background-size: contain;
+}
+
+.carousel-control-next-icon {
+    width: 24px;
+    height: 24px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23d4af37'%3E%3Cpath d='M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z'/%3E%3C/svg%3E") no-repeat center;
+    background-size: contain;
 }
 
 .banner-details {
@@ -229,6 +309,7 @@ body {
     line-height: 2;
     letter-spacing: 0.5px;
     font-weight: 500;
+    text-shadow: 0 3px 10px rgba(0, 0, 0, 0.9);
 }
 
 .banner-details p {
@@ -237,13 +318,14 @@ body {
     align-items: center;
     justify-content: center;
     gap: 12px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
 }
 
 .banner-details i {
     font-size: 1.3rem;
     color: var(--accent-gold);
-    opacity: 0.95;
-    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+    opacity: 1;
+    filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.8));
 }
 
 /* ============================================
@@ -257,8 +339,8 @@ body {
 }
 
 .py-5 {
-    padding-top: 60px;
-    padding-bottom: 60px;
+    padding-top: 45px;
+    padding-bottom: 45px;
 }
 
 /* About Section */
@@ -271,11 +353,11 @@ body {
     font-size: 2.2rem;
     color: var(--primary-maroon);
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 35px;
     font-weight: 700;
     letter-spacing: 1px;
     position: relative;
-    padding-bottom: 20px;
+    padding-bottom: 15px;
 }
 
 .section-heading::after {
@@ -422,6 +504,7 @@ body {
     border-radius: 12px 12px 0 0;
     z-index: 2;
 }
+
 
 .institute-card h3 {
     font-family: 'Cinzel', serif;
@@ -773,18 +856,265 @@ footer .footer-gold {
     .committee-members-grid.four-cols {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    .committee-members-grid.five-cols {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 20px;
+    }
+
+    .py-5 {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    .section-heading {
+        font-size: 1.9rem;
+        margin-bottom: 30px;
+    }
+
+    .committee-members-grid.five-cols {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .member-image,
+    .member-image-placeholder {
+        width: 150px;
+        height: 150px;
+        margin: 0 auto 12px;
+    }
+
+    .committee-member h4 {
+        font-size: 0.95rem;
+    }
+
+    .member-position {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    .logo-bar-sticky {
+        padding: 10px 0;
+    }
+
     .conf-title h1 {
-        font-size: 1.5rem;
-        letter-spacing: 0;
+        font-size: 1.3rem;
     }
 
     .navbar-sticky nav ul {
+        gap: 10px;
+        font-size: 0.75rem;
+    }
+
+    .py-5 {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    .section-heading {
+        font-size: 1.6rem;
+        margin-bottom: 25px;
+    }
+
+    .hero-carousel {
+        height: 50vh;
+    }
+
+    .carousel-image {
+        height: 50vh;
+    }
+
+    .banner-title {
+        font-size: 1.5rem;
+        letter-spacing: 1px;
+    }
+
+    .banner-details p {
+        font-size: 0.9rem;
+    }
+
+    .committee-members-grid.five-cols {
+        grid-template-columns: repeat(2, 1fr);
         gap: 15px;
+    }
+
+    .committee-member {
+        padding: 18px 14px;
+    }
+
+    .member-image,
+    .member-image-placeholder {
+        width: 120px;
+        height: 120px;
+        margin: 0 auto 10px;
+    }
+
+    .committee-member h4 {
+        font-size: 0.9rem;
+    }
+
+    .member-position {
+        font-size: 0.75rem;
+    }
+
+    .registration-table {
         font-size: 0.85rem;
     }
+
+    .institutes-container {
+        gap: 20px;
+    }
+
+    .resources-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: 40px;
+        height: 40px;
+    }
+
+    .topics-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 12px;
+    }
+
+    .logo-bar-sticky {
+        padding: 8px 0;
+    }
+
+    .conf-title h1 {
+        font-size: 1rem;
+        letter-spacing: 0;
+    }
+
+    .logos-left .logo {
+        width: 30px;
+        height: 30px;
+    }
+
+    .navbar-sticky nav ul {
+        gap: 8px;
+        font-size: 0.65rem;
+    }
+
+    .navbar-sticky nav ul li a {
+        padding: 3px 6px;
+    }
+
+    .py-5 {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    .section-heading {
+        font-size: 1.3rem;
+        margin-bottom: 20px;
+    }
+
+    .hero-carousel {
+        height: 40vh;
+    }
+
+    .carousel-image {
+        height: 40vh;
+    }
+
+    .banner-title {
+        font-size: 1.1rem;
+        letter-spacing: 0.5px;
+    }
+
+    .banner-details p {
+        font-size: 0.8rem;
+    }
+
+    .committee-members-grid.five-cols {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .committee-member {
+        padding: 14px 10px;
+    }
+
+    .member-image,
+    .member-image-placeholder {
+        width: 100px;
+        height: 100px;
+        margin: 0 auto 8px;
+    }
+
+    .committee-member h4 {
+        font-size: 0.85rem;
+    }
+
+    .member-position {
+        font-size: 0.7rem;
+    }
+
+    .registration-table {
+        font-size: 0.75rem;
+    }
+
+    .registration-table th,
+    .registration-table td {
+        padding: 8px 4px;
+    }
+
+    .institutes-container {
+        gap: 15px;
+    }
+
+    .institute-card {
+        padding: 15px;
+    }
+
+    .resources-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: 35px;
+        height: 35px;
+    }
+
+    .topics-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .topic-item {
+        font-size: 0.9rem;
+    }
+
+    .timeline-event {
+        font-size: 0.95rem;
+    }
+
+    .timeline-date {
+        font-size: 0.85rem;
+    }
+}
 
     .hero-banner {
         height: 40vh;
@@ -817,8 +1147,6 @@ footer .footer-gold {
     .logos-left img {
         height: 35px;
     }
-}
-
 /* ============================================
    Utility Classes
    ============================================ */
@@ -956,8 +1284,9 @@ footer .footer-gold {
     transform: translateX(-50%);
     top: 0;
     bottom: 0;
-    width: 2px;
-    background: linear-gradient(180deg, #800000 0%, rgba(128, 0, 0, 0.3) 50%, transparent 100%);
+    width: 3px;
+    background: linear-gradient(180deg, var(--accent-gold) 0%, rgba(212, 175, 55, 0.6) 50%, transparent 100%);
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
 }
 
 .timeline-item {
@@ -1313,8 +1642,8 @@ footer .footer-gold {
 }
 
 .committee-group {
-    margin-bottom: 60px;
-    padding: 30px 0;
+    margin-bottom: 45px;
+    padding: 25px 0;
 }
 
 .committee-title {
@@ -1346,44 +1675,73 @@ footer .footer-gold {
 .committee-members-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 30px;
-    max-width: 1000px;
+    gap: 25px;
+    max-width: 1200px;
     margin: 0 auto;
+    align-items: stretch;
 }
 
 .committee-members-grid.four-cols {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 
+.committee-members-grid.five-cols {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    max-width: 1400px;
+}
+
 .committee-member {
     text-align: center;
-    background-color: var(--soft-white);
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    transition: all 0.3s ease;
-    border: 1px solid rgba(212, 175, 55, 0.15);
+    background: linear-gradient(135deg, #ffffff 0%, #fdfcf9 100%);
+    padding: 24px 18px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(128, 0, 0, 0.1);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    border: 2px solid rgba(212, 175, 55, 0.2);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.committee-member::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+    transition: left 0.4s ease;
+}
+
+.committee-member:hover::before {
+    left: 100%;
 }
 
 .committee-member:hover {
-    box-shadow: 0 8px 24px rgba(128, 0, 0, 0.12);
-    transform: translateY(-4px);
-    border-color: rgba(212, 175, 55, 0.3);
+    box-shadow: 0 12px 30px rgba(128, 0, 0, 0.18);
+    transform: translateY(-6px);
+    border-color: rgba(212, 175, 55, 0.5);
+    background: linear-gradient(135deg, #fdfcf9 0%, #fff5e6 100%);
 }
 
 .member-image-placeholder {
-    width: 150px;
-    height: 150px;
+    width: 170px;
+    height: 170px;
     background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(212, 175, 55, 0.05) 100%);
     border: 2px dashed var(--accent-gold);
     border-radius: 8px;
-    margin: 0 auto 20px;
+    margin: 0 auto 16px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-family: 'Lora', serif;
     color: var(--accent-gold);
-    font-size: 0.95rem;
+    font-size: 0.85rem;
+    flex-shrink: 0;
 }
 
 .member-image-placeholder::before {
@@ -1391,46 +1749,54 @@ footer .footer-gold {
 }
 
 .member-image {
-    width: 200px;
-    height: 200px;
+    width: 170px;
+    height: 170px;
     object-fit: cover;
-    border-radius: 10px;
-    margin: 0 auto 20px;
+    border-radius: 12px;
+    margin: 0 auto 16px;
     display: block;
     border: 3px solid var(--accent-gold);
-    transition: all 0.3s ease;
-    box-shadow: 0 6px 18px rgba(128, 0, 0, 0.15);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    box-shadow: 0 6px 16px rgba(212, 175, 55, 0.18);
+    flex-shrink: 0;
 }
 
 .committee-member:hover .member-image {
-    border-color: var(--primary-maroon);
-    box-shadow: 0 6px 16px rgba(128, 0, 0, 0.15);
+    border-color: var(--accent-gold);
+    box-shadow: 0 10px 28px rgba(212, 175, 55, 0.35);
+    transform: scale(1.05);
 }
 
 
 .committee-member h4 {
     font-family: 'Cinzel', serif;
-    font-size: 1.15rem;
+    font-size: 1rem;
     color: var(--primary-maroon);
-    margin-bottom: 8px;
+    margin-bottom: 6px;
     font-weight: 700;
-    letter-spacing: 0.3px;
+    letter-spacing: 0.2px;
+    line-height: 1.3;
 }
 
 .member-position {
     font-family: 'Lora', serif;
     color: var(--primary-maroon);
-    font-size: 0.95rem;
-    line-height: 1.5;
-    margin: 8px 0 6px 0;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    margin: 6px 0 4px 0;
     font-weight: 600;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Advisory Committee Members */
 .advisory-member {
-    padding: 12px 0;
+    padding: 14px 0;
     border-bottom: 1px solid rgba(212, 175, 55, 0.2);
     transition: all 0.3s ease;
+    text-align: left;
 }
 
 .advisory-member:last-child {
@@ -1438,23 +1804,26 @@ footer .footer-gold {
 }
 
 .advisory-member:hover {
-    padding-left: 10px;
+    border-bottom-color: var(--accent-gold);
+    border-bottom-width: 2px;
 }
 
 .advisory-member h4 {
     font-family: 'Cinzel', serif;
-    font-size: 0.98rem;
+    font-size: 1rem;
     color: var(--primary-maroon);
     margin: 0 0 4px 0;
     font-weight: 700;
     letter-spacing: 0.3px;
+    line-height: 1.3;
 }
 
 .advisory-member .member-position {
-    font-size: 0.82rem;
-    color: var(--text-light);
+    font-size: 0.87rem;
+    color: #666666;
     margin: 0;
     font-weight: 500;
+    line-height: 1.45;
 }
 
 .member-institution {
@@ -1696,4 +2065,280 @@ footer .footer-gold {
     font-family: 'Lora', serif;
     font-size: 1.05rem;
     line-height: 1.8;
+}
+/* ============================================
+   Comprehensive Mobile Responsiveness
+   ============================================ */
+
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 20px;
+    }
+
+    .section-heading {
+        font-size: 1.9rem;
+        margin-bottom: 30px;
+    }
+
+    .committee-members-grid.five-cols {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .member-image,
+    .member-image-placeholder {
+        width: 150px;
+        height: 150px;
+    }
+
+    .committee-member h4 {
+        font-size: 0.95rem;
+    }
+
+    .member-position {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    .logo-bar-sticky {
+        padding: 10px 0;
+    }
+
+    .conf-title h1 {
+        font-size: 1.3rem;
+    }
+
+    .navbar-sticky nav ul {
+        gap: 10px;
+        font-size: 0.75rem;
+    }
+
+    .py-5 {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    .section-heading {
+        font-size: 1.6rem;
+        margin-bottom: 25px;
+    }
+
+    .hero-carousel {
+        height: 50vh;
+    }
+
+    .carousel-image {
+        height: 50vh;
+    }
+
+    .banner-title {
+        font-size: 1.5rem;
+    }
+
+    .banner-details p {
+        font-size: 0.9rem;
+    }
+
+    .committee-members-grid.five-cols {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .committee-member {
+        padding: 18px 14px;
+    }
+
+    .member-image,
+    .member-image-placeholder {
+        width: 120px;
+        height: 120px;
+        margin: 0 auto 10px;
+    }
+
+    .committee-member h4 {
+        font-size: 0.9rem;
+    }
+
+    .member-position {
+        font-size: 0.75rem;
+    }
+
+    .registration-table {
+        font-size: 0.85rem;
+    }
+
+    .institutes-container {
+        gap: 20px;
+    }
+
+    .institute-card {
+        padding: 15px;
+    }
+
+    .resources-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: 40px;
+        height: 40px;
+    }
+
+    .topics-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 12px;
+    }
+
+    .logo-bar-sticky {
+        padding: 8px 0;
+    }
+
+    .conf-title h1 {
+        font-size: 1rem;
+        letter-spacing: 0;
+    }
+
+    .logos-left .logo {
+        width: 30px;
+        height: 30px;
+    }
+
+    .navbar-sticky nav ul {
+        gap: 8px;
+        font-size: 0.65rem;
+    }
+
+    .navbar-sticky nav ul li a {
+        padding: 3px 6px;
+    }
+
+    .py-5 {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    .section-heading {
+        font-size: 1.3rem;
+        margin-bottom: 20px;
+    }
+
+    .hero-carousel {
+        height: 40vh;
+    }
+
+    .carousel-image {
+        height: 40vh;
+    }
+
+    .banner-title {
+        font-size: 1.1rem;
+        letter-spacing: 0.5px;
+    }
+
+    .banner-details p {
+        font-size: 0.8rem;
+    }
+
+    .committee-members-grid.five-cols {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .committee-member {
+        padding: 14px 10px;
+    }
+
+    .member-image,
+    .member-image-placeholder {
+        width: 100px;
+        height: 100px;
+        margin: 0 auto 8px;
+    }
+
+    .committee-member h4 {
+        font-size: 0.85rem;
+    }
+
+    .member-position {
+        font-size: 0.7rem;
+    }
+
+    .registration-table {
+        font-size: 0.75rem;
+    }
+
+    .registration-table th,
+    .registration-table td {
+        padding: 8px 4px;
+    }
+
+    .institutes-container {
+        gap: 15px;
+    }
+
+    .institute-card {
+        padding: 12px;
+    }
+
+    .institute-card img {
+        height: 200px;
+    }
+
+    .resources-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: 35px;
+        height: 35px;
+    }
+
+    .topics-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .topic-item {
+        font-size: 0.9rem;
+    }
+
+    .timeline-event {
+        font-size: 0.95rem;
+    }
+
+    .timeline-date {
+        font-size: 0.85rem;
+    }
+
+    .cfp-section .submission-box-single {
+        padding: 20px 15px;
+    }
+
+    .committee-group {
+        margin-bottom: 30px;
+        padding: 15px 0;
+    }
+
+    .btn-submit-cfp {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+    .advisory-member {
+        padding: 10px 0;
+    }
 }
