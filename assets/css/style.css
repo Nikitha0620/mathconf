@@ -86,6 +86,28 @@ body {
     margin: 0 auto;
     padding: 0 30px;
     gap: 80px;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 1024px) {
+    .logo-bar-content {
+        gap: 40px;
+        padding: 0 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .logo-bar-content {
+        gap: 20px;
+        padding: 0 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-bar-content {
+        gap: 10px;
+        padding: 0 10px;
+    }
 }
 
 .logos-left {
@@ -166,6 +188,26 @@ body {
     margin: 0;
     flex-wrap: wrap;
     justify-content: center;
+}
+
+@media (max-width: 1200px) {
+    .navbar-sticky nav ul {
+        gap: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar-sticky nav ul {
+        gap: 10px;
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar-sticky nav ul {
+        gap: 5px;
+        font-size: 0.65rem;
+    }
 }
 
 .navbar-sticky nav a {
@@ -254,13 +296,53 @@ body {
     margin-right: 8px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
     .banner-title {
-        font-size: 2rem;
+        font-size: 2.2rem;
     }
 
     .banner-details p {
         font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .banner-title {
+        font-size: 1.8rem;
+    }
+
+    .banner-details p {
+        font-size: 0.95rem;
+    }
+    
+    .countdown-timer {
+        gap: 15px;
+    }
+    
+    .timer-value {
+        font-size: 2.2rem;
+    }
+    
+    .timer-unit {
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .banner-title {
+        font-size: 1.4rem;
+    }
+
+    .banner-details p {
+        font-size: 0.85rem;
+    }
+    
+    .countdown-timer {
+        gap: 10px;
+    }
+    
+    .timer-value {
+        font-size: 1.8rem;
     }
 }
 
@@ -281,6 +363,23 @@ body {
     justify-content: center;
     transition: all 0.3s ease;
     opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: 35px;
+        height: 35px;
+        opacity: 0.7;
+    }
 }
 
 .carousel-control-prev {
@@ -453,6 +552,29 @@ body {
     padding-bottom: 15px;
 }
 
+@media (max-width: 1024px) {
+    .section-heading {
+        font-size: 1.9rem;
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .section-heading {
+        font-size: 1.6rem;
+        margin-bottom: 25px;
+        letter-spacing: 0.5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-heading {
+        font-size: 1.3rem;
+        margin-bottom: 20px;
+        letter-spacing: 0.2px;
+    }
+}
+
 .section-heading::after {
     content: '';
     position: absolute;
@@ -549,6 +671,28 @@ body {
     letter-spacing: 0.3px;
 }
 
+@media (max-width: 1024px) {
+    .section-text {
+        font-size: 1.05rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .section-text {
+        font-size: 1rem;
+        line-height: 1.8;
+        letter-spacing: 0px;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-text {
+        font-size: 0.95rem;
+        text-align: left;
+        line-height: 1.7;
+    }
+}
+
 /* Institutes Section */
 .institutes-bg {
     background: linear-gradient(135deg, var(--bg-cream) 0%, #f5f2ed 100%);
@@ -561,6 +705,20 @@ body {
     gap: 40px;
     max-width: 900px;
     margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .institutes-container {
+        gap: 25px;
+        padding: 0 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .institutes-container {
+        gap: 15px;
+        padding: 0 10px;
+    }
 }
 
 .institute-card {
@@ -608,12 +766,41 @@ body {
     letter-spacing: 0.5px;
 }
 
+@media (max-width: 768px) {
+    .institute-card h3 {
+        font-size: 1.3rem;
+        margin: 20px 25px 12px 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .institute-card h3 {
+        font-size: 1.1rem;
+        margin: 15px 15px 10px 15px;
+    }
+}
+
 .institute-card p {
     font-family: 'Lora', serif;
     color: var(--text-light);
     font-size: 1.05rem;
     line-height: 1.9;
     margin: 0 45px 25px 45px;
+}
+
+@media (max-width: 768px) {
+    .institute-card p {
+        font-size: 0.95rem;
+        margin: 0 25px 20px 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .institute-card p {
+        font-size: 0.85rem;
+        margin: 0 15px 15px 15px;
+        line-height: 1.6;
+    }
 }
 
 /* Departments Section */
@@ -625,6 +812,13 @@ body {
     display: flex;
     justify-content: space-between;
     gap: 30px;
+}
+
+@media (max-width: 768px) {
+    .departments-section .row {
+        flex-direction: column;
+        gap: 20px;
+    }
 }
 
 .departments-section .col-md-6 {
@@ -640,6 +834,27 @@ body {
     box-shadow: 15px 15px 0px var(--accent-gold);
     transition: all 0.4s ease;
     height: 100%;
+}
+
+@media (max-width: 1024px) {
+    .dept-card {
+        padding: 35px;
+        box-shadow: 12px 12px 0px var(--accent-gold);
+    }
+}
+
+@media (max-width: 768px) {
+    .dept-card {
+        padding: 25px;
+        box-shadow: 10px 10px 0px var(--accent-gold);
+    }
+}
+
+@media (max-width: 480px) {
+    .dept-card {
+        padding: 20px;
+        box-shadow: 6px 6px 0px var(--accent-gold);
+    }
 }
 
 .dept-card:hover {
@@ -726,6 +941,26 @@ section#cfp.cfp-section {
     gap: 20px;
 }
 
+@media (max-width: 1024px) {
+    .topics-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .topics-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .topics-grid {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+}
+
 .topic-item {
     font-family: 'Lora', serif;
     color: var(--soft-white);
@@ -752,6 +987,22 @@ section#cfp.cfp-section {
     max-width: 500px;
     margin-left: auto;
     margin-right: auto;
+}
+
+@media (max-width: 768px) {
+    .submission-box-single {
+        padding: 30px;
+        margin-top: 40px;
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .submission-box-single {
+        padding: 20px 15px;
+        margin-top: 30px;
+        max-width: 100%;
+    }
 }
 
 .submission-title {
@@ -1300,6 +1551,28 @@ footer .footer-gold {
     background: white;
 }
 
+@media (max-width: 768px) {
+    .registration-table {
+        font-size: 0.9rem;
+    }
+    
+    .registration-table th,
+    .registration-table td {
+        padding: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .registration-table {
+        font-size: 0.8rem;
+    }
+    
+    .registration-table th,
+    .registration-table td {
+        padding: 8px;
+    }
+}
+
 .registration-table thead {
     background: linear-gradient(135deg, var(--primary-maroon) 0%, #660000 100%);
 }
@@ -1387,6 +1660,20 @@ footer .footer-gold {
     display: flex;
     gap: 30px;
     align-items: flex-start;
+}
+
+@media (max-width: 768px) {
+    .timeline-item {
+        margin-bottom: 30px;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .timeline-item {
+        margin-bottom: 20px;
+        gap: 15px;
+    }
 }
 
 .timeline-item:nth-child(odd) {
@@ -1584,6 +1871,18 @@ footer .footer-gold {
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
 
+@media (max-width: 768px) {
+    .payment-card {
+        padding: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .payment-card {
+        padding: 20px 15px;
+    }
+}
+
 .payment-card h3 {
     font-family: 'Cinzel', serif;
     font-size: 1.6rem;
@@ -1776,10 +2075,51 @@ footer .footer-gold {
     align-items: stretch;
 }
 
+@media (max-width: 1200px) {
+    .committee-members-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .committee-members-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .committee-members-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .committee-members-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+}
+
 .advisory-committee .committee-members-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 15px 30px;
     max-width: 100%;
+}
+
+@media (max-width: 1024px) {
+    .advisory-committee .committee-members-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .advisory-committee .committee-members-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
 }
 
 .committee-members-grid.four-cols {
@@ -1860,6 +2200,29 @@ footer .footer-gold {
     transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     box-shadow: 0 6px 16px rgba(212, 175, 55, 0.18);
     flex-shrink: 0;
+}
+
+@media (max-width: 1024px) {
+    .member-image {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+@media (max-width: 768px) {
+    .member-image {
+        width: 120px;
+        height: 120px;
+        margin: 0 auto 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .member-image {
+        width: 100px;
+        height: 100px;
+        margin: 0 auto 8px;
+    }
 }
 
 .committee-member:hover .member-image {
@@ -1991,6 +2354,36 @@ footer .footer-gold {
     z-index: 2;
 }
 
+@media (max-width: 1400px) {
+    .resources-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        padding: 0 20px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .resources-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .resources-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        padding: 0 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .resources-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        padding: 0 10px;
+    }
+}
+
 .resources-section .committee-member {
     text-align: center;
     transition: all 0.3s ease;
@@ -2074,6 +2467,20 @@ footer .footer-gold {
     margin-bottom: 40px;
 }
 
+@media (max-width: 768px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
 .footer-block h4 {
     font-family: 'Cinzel', serif;
     color: var(--accent-gold);
@@ -2135,6 +2542,20 @@ footer .footer-gold {
     margin-top: 40px;
     padding-top: 30px;
     border-top: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+@media (max-width: 768px) {
+    .footer-credits {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-credits {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
 }
 
 .credits-section h5 {
