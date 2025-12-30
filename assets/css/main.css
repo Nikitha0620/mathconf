@@ -426,65 +426,129 @@ text-align: justify;}
 /*--------------------------------------------------------------
 # Global Footer
 --------------------------------------------------------------*/
+/* ===================== */
+/* FOOTER BASE */
+/* ===================== */
+
 .footer {
- 
-  color: var(--default-color);
-  background-color: #062068;
+  background-color: #800000; /* Maroon */
+  color: #ffffff;            /* White text */
   font-size: 14px;
   padding: 40px 0 0 0;
   position: relative;
+  margin-bottom: 0;
+  text-align: center;        /* ✅ Center everything */
 }
 
-.footer .icon {
-  color: var(--accent-color);
-  margin-right: 15px;
-  font-size: 24px;
-  line-height: 0;
-}
-
-.footer h4 {
-  font-size: 16px;
+/* Headings */
+.footer h4,
+.footer h3 {
+  color: #f5c77a;            /* Gold */
   font-weight: 700;
   margin-bottom: 15px;
+  text-align: center;
 }
 
-.footer .address p {
-  margin-bottom: 0px;
+/* Paragraph text */
+.footer p {
+  color: #ffffff;
+  margin-bottom: 6px;
+  text-align: center;
 }
 
-.footer .social-links a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  border: 1px solid color-mix(in srgb, var(--default-color), transparent 50%);
-  font-size: 16px;
-  color: color-mix(in srgb, var(--default-color), transparent 50%);
-  margin-right: 10px;
-  transition: 0.3s;
+/* ===================== */
+/* FOOTER BOTTOM */
+/* ===================== */
+
+.footer-bottom {
+  text-align: center !important;
 }
 
-.footer .social-links a:hover {
-  color: var(--accent-color);
-  border-color: var(--accent-color);
+.footer-bottom p {
+  color: #ffffff;
+  margin: 6px 0;
 }
+
+/* ===================== */
+/* COPYRIGHT */
+/* ===================== */
 
 .footer .copyright {
-  color: #CCC;
-  padding: 25px 0;
-  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  text-align: center !important;
+  padding: 20px 0;
+  border-top: 1px solid rgba(255, 215, 150, 0.35);
 }
 
 .footer .copyright p {
-  margin-bottom: 0;
-  color: #e5eaee;
+  color: #ffffff;
+  margin: 0;
 }
 
-.footer .credits {
-  margin-top: 5px;
+/* ===================== */
+/* LINKS */
+/* ===================== */
+
+.footer a {
+  color: #f5c77a; /* Gold */
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.footer a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* ===================== */
+/* MARQUEE CREDIT BAR */
+/* ===================== */
+
+.footer-marquee {
+  background-color: #600000; /* Dark maroon */
+  color: #f5c77a;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 10px 0;
+  margin: 0;
+  border-top: 1px solid rgba(255, 215, 150, 0.35);
+}
+
+.marquee-content {
+  display: inline-block;
+  padding-left: 100%;
+  animation: footer-marquee 18s linear infinite;
   font-size: 13px;
+}
+
+/* Marquee animation */
+@keyframes footer-marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+/* ===================== */
+/* MAP */
+/* ===================== */
+
+.footer iframe {
+  width: 100%;
+  height: 230px;
+  border: 0;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+/* ===================== */
+/* REMOVE BOTTOM GAP */
+/* ===================== */
+
+body {
+  margin-bottom: 0 !important;
+}
+
+footer {
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
 }
 
 /*--------------------------------------------------------------
@@ -682,134 +746,131 @@ section,
     font-size: 38px;
   }
 }
-/*--------------------------------------------------------------
-# Hero Section
---------------------------------------------------------------*/
+/* ========================= */
+/* HERO / BANNER SECTION */
+/* ========================= */
+
 .hero {
+  position: relative;
   width: 100%;
   min-height: 100vh;
-  position: relative;
-  padding: 100px 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: url(../img/vit-bg.webp) no-repeat top center;
+  padding: 0;
+  overflow: hidden;
 }
 
 
-.hero:before {
-  content: "";
-  background: color-mix(in srgb, var(--background-color), transparent 30%);
+/* Dark Overlay */
+.hero-overlay {
   position: absolute;
   inset: 0;
+  background: rgba(0, 0, 0, 0.55);
   z-index: 2;
 }
 
-.hero .container {
-  position: relative;
+/* Content */
+.hero-content {
+  position: absolute;
+  inset: 0;
   z-index: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #ffffff;
+  padding: 20px;
+}
+.carousel-item {
+  transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
 }
 
-.hero h2 {
-  margin: 0;
-  font-size: 48px;
+.carousel-fade .carousel-item {
+  opacity: 0;
+}
+
+.carousel-fade .carousel-item.active {
+  opacity: 1;
+}
+
+.hero-bg {
+  height: 100vh;
+  object-fit: cover;
+}
+
+/* Title */
+.hero-title {
+  color: #f5c77a;
+  font-size: 36px;
   font-weight: 700;
-  text-align: center; 
-  color: #ffb806;
-  margin-bottom: 20px;
-}
-
-.hero h3 {
-  margin: 0;
-  font-size: 30px;
-  font-weight: 700;
-  text-align: center;  
-  margin-bottom: 20px;
-}
-
-.hero p {
-  color: color-mix(in srgb, var(--default-color), transparent 20%);
-   font-size: 24px;
-}
-
-.hero .btn-get-started {
-  background: var(--accent-color);
-  color: var(--contrast-color);
-  font-weight: 400;
-  font-size: 14px;
   letter-spacing: 1px;
-  display: inline-block;
-  padding: 10px 30px;
-  border-radius: 4px;
-  transition: 0.3s;
+  margin-bottom: 15px;
   text-transform: uppercase;
 }
 
-.hero .btn-get-started:hover {
-  background: color-mix(in srgb, var(--accent-color), transparent 20%);
+/* Subtitle */
+.hero-subtitle {
+  font-size: 17px;
+  line-height: 1.6;
+  margin-bottom: 10px;
+  color: #ffffff;
 }
 
-.hero .btn-watch-video {
+/* Date & Location */
+.hero-meta {
   font-size: 16px;
-  transition: 0.5s;
-  margin-left: 25px;
-  font-weight: 400;
-  color: var(--default-color);
+  margin-bottom: 25px;
+  color: #ffffff;
 }
 
-.hero .btn-watch-video i {
-  color: var(--accent-color);
-  font-size: 32px;
-  transition: 0.3s;
-  line-height: 0;
-  margin-right: 8px;
+/* Countdown Box */
+.countdown-wrapper {
+  border: 2px solid #f5c77a;
+  padding: 25px 30px;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.6);
 }
 
-.hero .btn-watch-video:hover {
-  color: var(--accent-color);
+.countdown-label {
+  color: #f5c77a;
+  font-size: 14px;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
 }
 
-.hero .btn-watch-video:hover i {
-  color: color-mix(in srgb, var(--accent-color), transparent 20%);
-}
-
-
-.hero .feature-boxes .feature-box:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-}
-
-.hero .feature-boxes .feature-box .feature-icon {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
+/* Timer */
+.countdown-timer {
   display: flex;
-  align-items: center;
+  gap: 20px;
   justify-content: center;
-  flex-shrink: 0;
+  margin-bottom: 15px;
 }
 
-.hero .feature-boxes .feature-box .feature-icon i {
-  font-size: 1.75rem;
-  color: var(--heading-color);
+.time-box span {
+  font-size: 36px;
+  font-weight: 700;
+  color: #f5c77a;
 }
 
-.hero .feature-boxes .feature-box .feature-content {
-  flex: 1;
+.time-box small {
+  display: block;
+  font-size: 12px;
+  color: #ffffff;
 }
 
-.hero .feature-boxes .feature-box .feature-content .feature-title {
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: var(--heading-color);
-  margin-bottom: 0.75rem;
-}
+/* Mobile */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 22px;
+  }
 
-.hero .feature-boxes .feature-box .feature-content .feature-text {
-  font-size: 0.95rem;
-  color: var(--default-color);
-  margin-bottom: 0;
+  .countdown-timer {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .time-box span {
+    font-size: 28px;
+  }
 }
 
 @media (max-width: 767.98px) {
@@ -868,6 +929,36 @@ section,
     align-items: flex-start;
     text-align: left;
   }
+}
+/* ============================= */
+/* BOOTSTRAP CAROUSEL FIX */
+/* ============================= */
+
+.carousel-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-item {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  transition: opacity 0.6s ease-in-out;
+}
+
+.carousel-item.active {
+  position: relative;
+  opacity: 1;
+  z-index: 1;
+}
+
+
+/* Ensure image fills */
+.hero-bg {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
 }
 
 
