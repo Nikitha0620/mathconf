@@ -124,26 +124,24 @@
   /**
    * Countdown timer
    */
-  function updateCountDown(countDownItem) {
-    const timeleft = new Date(countDownItem.getAttribute('data-count')).getTime() - new Date().getTime();
+  function updateCountDown() {
+    // Set the deadline to January 15, 2026
+    const deadline = new Date('January 15, 2026').getTime();
+    const now = new Date().getTime();
+    const timeleft = deadline - now;
 
     const days = Math.floor(timeleft / (1000 * 60 * 60 * 24));
     const hours = Math.floor((timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     const minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
 
-    countDownItem.querySelector('.count-days').innerHTML = days;
-    countDownItem.querySelector('.count-hours').innerHTML = hours;
-    countDownItem.querySelector('.count-minutes').innerHTML = minutes;
-    countDownItem.querySelector('.count-seconds').innerHTML = seconds;
-
+    document.getElementById('days').innerHTML = String(days).padStart(2, '0');
+    document.getElementById('hours').innerHTML = String(hours).padStart(2, '0');
+    document.getElementById('minutes').innerHTML = String(minutes).padStart(2, '0');
+    document.getElementById('seconds').innerHTML = String(seconds).padStart(2, '0');
   }
 
-  document.querySelectorAll('.countdown').forEach(function(countDownItem) {
-    updateCountDown(countDownItem);
-    setInterval(function() {
-      updateCountDown(countDownItem);
-    }, 1000);
-  });
+  updateCountDown();
+  setInterval(updateCountDown, 1000);
 
 })();
