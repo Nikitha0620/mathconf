@@ -9,34 +9,36 @@
 :root { 
   --background-color: #ffffff; /* Background color for the entire website, including individual sections */
   --default-color: #444444; /* Default color used for the majority of the text content across the entire website */
-  --heading-color: #273d4e; /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #ffb806; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  --heading-color: #600000; /* Color for headings, subheadings and title throughout the website - Maroon */
+  --accent-color: #d4af37; /* Accent color - Gold/Yellow (used sparingly) */
   --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
   --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
+  --maroon-color: #600000; /* Primary maroon color */
+  --navy-color: #273d4e; /* Navy blue for minor accents only */
 }
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
 :root {
-  --nav-color: #e5eaee;  /* The default color of the main navmenu links */
-  --nav-hover-color: #ffb806; /* Applied to main navmenu links when they are hovered over or active */
+  --nav-color: #ffffff;  /* The default color of the main navmenu links - White */
+  --nav-hover-color: #d4af37; /* Applied to main navmenu links when they are hovered over or active - Gold */
   --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
   --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
   --nav-dropdown-color: #444444; /* Used for navigation links of the dropdown items in the navigation menu. */
-  --nav-dropdown-hover-color: #ffb806; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+  --nav-dropdown-hover-color: #600000; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over - Maroon */
 }
 
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
 
 .light-background {
-  --background-color: #f1f4fa;
+  --background-color: #f9f7f4;
   --surface-color: #ffffff;
 }
 
 .dark-background {
-  --background-color: #000910;
+  --background-color: #600000;
   --default-color: #ffffff;
   --heading-color: #ffffff;
-  --surface-color: #28323a;
+  --surface-color: #600000;
   --contrast-color: #ffffff;
 }
 
@@ -63,7 +65,7 @@ body::before {
   right: 0;
   top: 0;
   bottom: 0;
-  background: rgba(49, 71, 89, 0.6);
+  background: rgba(128, 0, 0, 0.05);
 }
 
 @media (min-width: 1366px) {
@@ -183,7 +185,7 @@ text-align: justify;}
 /* Global Header on Scroll
 ------------------------------*/
 .scrolled .header {
-  --background-color: rgba(21, 34, 43, 0.85);
+  --background-color: rgba(73, 4, 4, 0.95);
 }
 
 /*--------------------------------------------------------------
@@ -431,7 +433,7 @@ text-align: justify;}
 /* ===================== */
 
 .footer {
-  background-color: #800000; /* Maroon */
+  background-color: #600000; /* Maroon */
   color: #ffffff;            /* White text */
   font-size: 14px;
   padding: 40px 0 0 0;
@@ -443,7 +445,7 @@ text-align: justify;}
 /* Headings */
 .footer h4,
 .footer h3 {
-  color: #f5c77a;            /* Gold */
+  color: #d4af37;            /* Gold */
   font-weight: 700;
   margin-bottom: 15px;
   text-align: center;
@@ -489,7 +491,7 @@ text-align: justify;}
 /* ===================== */
 
 .footer a {
-  color: #f5c77a; /* Gold */
+  color: #d4af37; /* Gold */
   text-decoration: none;
   font-weight: 500;
 }
@@ -505,7 +507,7 @@ text-align: justify;}
 
 .footer-marquee {
   background-color: #600000; /* Dark maroon */
-  color: #f5c77a;
+  color: #d4af37;
   overflow: hidden;
   white-space: nowrap;
   padding: 10px 0;
@@ -714,13 +716,13 @@ section,
   padding-bottom: 0;
   position: relative;
   z-index: 2;
-  color: #273d4e;
+  color: #600000;
 }
 
 .section-title span {
   position: absolute;
   top: 4px;
-  color: color-mix(in srgb, #273d4e, transparent 95%);
+  color: color-mix(in srgb, #600000, transparent 95%);
   left: 0;
   right: 0;
   z-index: 1;
@@ -799,7 +801,7 @@ section,
 
 /* Title */
 .hero-title {
-  color: #f5c77a;
+  color: #d4af37;
   font-size: 36px;
   font-weight: 700;
   letter-spacing: 1px;
@@ -824,14 +826,14 @@ section,
 
 /* Countdown Box */
 .countdown-wrapper {
-  border: 2px solid #f5c77a;
+  border: 2px solid #ffb806;
   padding: 25px 30px;
   border-radius: 12px;
   background: rgba(0, 0, 0, 0.6);
 }
 
 .countdown-label {
-  color: #f5c77a;
+  color: #ffb806;
   font-size: 14px;
   letter-spacing: 1px;
   margin-bottom: 15px;
@@ -848,7 +850,7 @@ section,
 .time-box span {
   font-size: 36px;
   font-weight: 700;
-  color: #f5c77a;
+  color: #ffb806;
 }
 
 .time-box small {
@@ -1010,7 +1012,7 @@ section,
 }
 
 .about .feature-list li i {
-  color: var(--accent-color);
+  color: #600000;
   font-size: 1.25rem;
 }
 
@@ -1027,7 +1029,7 @@ section,
 }
 
 .about .profile .profile-position {
-  color: var(--accent-color);
+  color: #600000;
   margin: 0;
   font-size: 0.875rem;
 }
@@ -1040,7 +1042,7 @@ section,
 }
 
 .about .contact-info i {
-  color: var(--accent-color);
+  color: #600000;
   font-size: 1.5rem;
 }
 
@@ -1060,8 +1062,8 @@ section,
 }
 
 .about .read-more {
-  background: #ffb806;
-  color: #252525;
+  background: #600000;
+  color: #ffffff;
   font-family: var(--heading-font);
   font-weight: 500;
   font-size: 16px;
@@ -1081,7 +1083,7 @@ section,
 }
 
 .about .read-more:hover {
-  background: color-mix(in srgb, var(--accent-color), transparent 20%);
+  background: #b38181;
   padding-right: 25px;
 }
 
@@ -1223,13 +1225,15 @@ section,
   padding: 50px;
   transition: all ease-in-out 0.3s;
   height: 100%;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
 }
 
 .services .service-item .icon {
   margin: 0 auto;
   width: 64px;
   height: 64px;
-  background: var(--accent-color);
+  background: #600000;
   border-radius: 4px;
   display: flex;
   align-items: center;
@@ -1252,7 +1256,7 @@ section,
   top: -8px;
   height: 100%;
   width: 100%;
-  background: color-mix(in srgb, var(--accent-color), transparent 80%);
+  background: color-mix(in srgb, #600000, transparent 80%);
   border-radius: 5px;
   transition: all 0.3s ease-out 0s;
   transform: translateZ(-1px);
@@ -1271,8 +1275,10 @@ section,
 }
 
 .services .service-item:hover {
-  background: var(--accent-color);
-  border-color: var(--accent-color);
+  background: #600000;
+  border-color: #600000;
+  box-shadow: 0 10px 40px rgba(96, 0, 0, 0.3);
+  transform: translateY(-5px);
 }
 
 .services .service-item:hover .icon {
@@ -1280,7 +1286,7 @@ section,
 }
 
 .services .service-item:hover .icon i {
-  color: var(--accent-color);
+  color: #600000;
 }
 
 .services .service-item:hover .icon::before {
@@ -1377,8 +1383,8 @@ table.tableizer-table {
   margin-bottom: 0;
 }
 .services-3 .service-item:hover {
-  background: var(--accent-color);
-  border-color: var(--accent-color);
+  background: #600000;
+  border-color: #600000;
 }
 
 .services-3 .service-item:hover .icon {
@@ -1386,7 +1392,7 @@ table.tableizer-table {
 }
 
 .services-3 .service-item:hover .icon i {
-  color: var(--accent-color);
+  color: #600000;
 }
 
 .services-3 .service-item:hover .icon::before {
@@ -1546,7 +1552,7 @@ table.tableizer-table {
   font-weight: 700;
   margin-bottom: 15px;
   font-size: 20px;
-  color: #273d4e;
+  color: #600000;
 }
 
 .services-2 .service-item .title a {
@@ -1561,11 +1567,11 @@ table.tableizer-table {
 }
 
 .services-2 .service-item:hover {
-  border-color: var(--accent-color);
+  border-color: #600000;
 }
 
 .services-2 .service-item:hover .title a {
-  color: var(--accent-color);
+  color: #600000;
 }
 .services-2 ul.li {
   text-align: justify;}
@@ -1574,7 +1580,7 @@ table.tableizer-table {
 # Call To Action Section
 --------------------------------------------------------------*/
 .call-to-action .container {
-  background: #28323a;
+  background: #600000;
   color: var(--contrast-color);
   position: relative;
   overflow: hidden;
@@ -1591,19 +1597,21 @@ table.tableizer-table {
 }
 
 .call-to-action .btn-cta {
-  background-color: color-mix(in srgb, var(--contrast-color) 15%, transparent);
-  color: var(--contrast-color);
+  background-color: #d4af37;
+  color: #600000;
   padding: 12px 40px;
   border-radius: 50px;
   transition: all 0.3s ease;
-  border: 2px solid var(--contrast-color);
+  border: 2px solid #d4af37;
   position: relative;
   z-index: 2;
+  font-weight: 600;
 }
 
 .call-to-action .btn-cta:hover {
-  background-color: var(--contrast-color);
-  color: var(--accent-color);
+  background-color: #ffffff;
+  color: #600000;
+  border-color: #ffffff;
 }
 
 .call-to-action .shape {
@@ -1822,6 +1830,7 @@ table.tableizer-table {
 .testimonials {
   padding: 80px 0;
   position: relative;
+  background: #600000;
 }
 
 .testimonials:before {
@@ -1994,7 +2003,7 @@ table.tableizer-table {
   inset: 0;
   z-index: 3;
   transition: all ease-in-out 0.3s;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(128, 0, 0, 0.7);
   padding: 15px;
 }
 
@@ -2004,7 +2013,7 @@ table.tableizer-table {
   font-weight: 400;
   color: #ffffff;
   display: inline-block;
-  background-color: var(--accent-color);
+  background-color: #600000;
 }
 
 .portfolio .portfolio-content .portfolio-info p {
@@ -2032,7 +2041,7 @@ table.tableizer-table {
 
 .portfolio .portfolio-content .portfolio-info .preview-link:hover,
 .portfolio .portfolio-content .portfolio-info .details-link:hover {
-  color: var(--accent-color);
+  color: #d4af37;
 }
 
 .portfolio .portfolio-content .portfolio-info .details-link {
@@ -2079,18 +2088,18 @@ table.tableizer-table {
 }
 
 .menu .menu-filters .nav-pills .nav-link:hover {
-  background-color: var(--accent-color);
+  background-color: #600000;
   color: var(--contrast-color);
-  border-color: var(--accent-color);
+  border-color: #600000;
   transform: translateY(-3px);
-  box-shadow: 0 8px 30px color-mix(in srgb, var(--accent-color), transparent 70%);
+  box-shadow: 0 8px 30px color-mix(in srgb, #600000, transparent 70%);
 }
 
 .menu .menu-filters .nav-pills .nav-link.active {
-  background-color: var(--accent-color);
+  background-color: #600000;
   color: var(--contrast-color);
-  border-color: var(--accent-color);
-  box-shadow: 0 5px 20px color-mix(in srgb, var(--accent-color), transparent 60%);
+  border-color: #600000;
+  box-shadow: 0 5px 20px color-mix(in srgb, #600000, transparent 60%);
 }
 
 @media (max-width: 768px) {
@@ -2143,15 +2152,15 @@ table.tableizer-table {
   position: absolute;
   top: 15px;
   left: 15px;
-  background: linear-gradient(135deg, var(--accent-color), color-mix(in srgb, var(--accent-color), #ff6b6b 30%));
-  color: var(--contrast-color);
+  background: linear-gradient(135deg, #d4af37, color-mix(in srgb, #d4af37, #600000 30%));
+  color: #600000;
   padding: 8px 16px;
   border-radius: 25px;
   font-size: 12px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  box-shadow: 0 4px 15px color-mix(in srgb, var(--accent-color), transparent 50%);
+  box-shadow: 0 4px 15px color-mix(in srgb, #d4af37, transparent 50%);
 }
 
 .menu .menu-item .menu-item-content {
@@ -2234,13 +2243,13 @@ table.tableizer-table {
 .menu .menu-item .menu-item-content .menu-item-footer .price {
   font-size: 24px;
   font-weight: 800;
-  color: var(--accent-color);
+  color: #600000;
   display: block;
   text-align: right;
 }
 
 .menu .btn-download {
-  background: linear-gradient(135deg, var(--accent-color), color-mix(in srgb, var(--accent-color), transparent 30%));
+  background: linear-gradient(135deg, #600000, color-mix(in srgb, #600000, transparent 30%));
   color: var(--contrast-color);
   border: none;
   padding: 15px 40px;
@@ -2250,7 +2259,7 @@ table.tableizer-table {
   text-decoration: none;
   display: inline-flex;
   align-items: center;
-  box-shadow: 0 8px 30px color-mix(in srgb, var(--accent-color), transparent 70%);
+  box-shadow: 0 8px 30px color-mix(in srgb, #600000, transparent 70%);
   transition: all 0.3s ease;
 }
 
@@ -2260,8 +2269,9 @@ table.tableizer-table {
 
 .menu .btn-download:hover {
   transform: translateY(-3px);
-  box-shadow: 0 15px 50px color-mix(in srgb, var(--accent-color), transparent 50%);
+  box-shadow: 0 15px 50px color-mix(in srgb, #600000, transparent 50%);
   color: var(--contrast-color);
+  background: #600000;
 }
 
 @media (max-width: 768px) {
@@ -2403,7 +2413,7 @@ table.tableizer-table {
 
 .contact .php-email-form button[type=submit] {
   color: var(--contrast-color);
-  background: var(--accent-color);
+  background: #600000;
   border: 0;
   padding: 10px 30px;
   transition: 0.4s;
@@ -2411,7 +2421,7 @@ table.tableizer-table {
 }
 
 .contact .php-email-form button[type=submit]:hover {
-  background: color-mix(in srgb, var(--accent-color), transparent 20%);
+  background: #600000;
 }
 
 /*--------------------------------------------------------------
