@@ -2078,6 +2078,27 @@ table.tableizer-table {
     width: 100%;
   }
 
+   .agent-card .agent-profile .agent-info {
+    text-align: center;
+  }
+
+   .agent-card .agent-profile .agent-info h4 {
+    text-align: center;
+  }
+
+   .agent-card .agent-profile .agent-info p {
+    text-align: center;
+  }
+
+   .agent-card .agent-profile .agent-info .agent-rating {
+    text-align: center;
+    justify-content: center;
+  }
+
+   .agent-card .agent-profile .agent-info .agent-rating .rating-text {
+    text-align: center;
+  }
+
    .agent-card .agent-profile .agent-photo {
     width: 90px;
     height: 90px;
@@ -2594,8 +2615,11 @@ table.tableizer-table {
 .team .member span {
   font-style: italic;
   display: block;
-  font-size: 20px;
+  font-size: 18px;
   color: color-mix(in srgb, var(--default-color), transparent 20%);
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.5px;
 }
 
 .team .member p {
