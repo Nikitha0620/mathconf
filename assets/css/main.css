@@ -99,6 +99,33 @@ p {
   color: rgb(30, 30, 36);
 text-align: justify;}
 
+/* Custom Button Styles
+------------------------------*/
+.btn-brochure {
+  background: linear-gradient(135deg, #d4af37, #e6c54f);
+  border-color: #d4af37;
+  color: #600000;
+  font-weight: 600;
+  padding: 12px 30px;
+  transition: all 0.4s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 4px;
+  box-shadow: 0 6px 12px rgba(212, 175, 55, 0.3);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-brochure:hover {
+  background: linear-gradient(135deg, #e6c54f, #d4af37);
+  border-color: #d4af37;
+  color: #600000;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(212, 175, 55, 0.4);
+  text-decoration: none;
+}
+
 /* PHP Email Form Messages
 ------------------------------*/
 .php-email-form .error-message {
@@ -215,7 +242,7 @@ text-align: justify;}
   .navmenu a,
   .navmenu a:focus {
     color: var(--nav-color);
-    padding: 17px 17px;
+    padding: 22px 22px;
     font-size: 15.5px;
     font-family: var(--nav-font);
     font-weight: 500;
