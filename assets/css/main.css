@@ -4659,3 +4659,72 @@ table.tableizer-table {
     font-size: 1.05rem;
   }
 }
+
+/* Guidelines Section Styles */
+.guidelines-section-box {
+  background-color: var(--surface-color);
+  border-top: 3px solid var(--heading-color);
+  border-radius: 0;
+  padding: 40px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 8px rgba(96, 0, 0, 0.05);
+}
+
+.guidelines-header {
+  margin-bottom: 25px;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.guidelines-header h4 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--heading-color);
+  letter-spacing: 0.5px;
+}
+
+.guidelines-content {
+  padding: 0;
+}
+
+.guidelines-detailed-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  column-count: 1;
+}
+
+.guidelines-detailed-list li {
+  display: block;
+  margin-bottom: 18px;
+  color: var(--default-color);
+  line-height: 1.8;
+  padding: 0 0 0 0;
+  font-size: 0.95rem;
+  text-align: justify;
+}
+
+.guidelines-detailed-list li:last-child {
+  margin-bottom: 0;
+}
+
+.guidelines-detailed-list li:before {
+  content: "▪ ";
+  color: var(--heading-color);
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.guidelines-link {
+  color: var(--accent-color);
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid var(--accent-color);
+  transition: color 0.2s ease;
+}
+
+.guidelines-link:hover {
+  color: var(--heading-color);
+  border-bottom-color: var(--heading-color);
+}
