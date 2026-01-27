@@ -3593,6 +3593,31 @@ table.tableizer-table {
   font-size: 0.95rem;
 }
 
+.payment-content-wrapper {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.payment-left {
+  flex: 1;
+}
+
+.payment-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 200px;
+  margin-top: 30px;
+}
+
+.payment-qr-code {
+  max-width: 180px;
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
 .payment-link {
   color: #d4af37;
   font-weight: 600;
@@ -3692,6 +3717,22 @@ table.tableizer-table {
 
   .payment-steps li {
     margin-bottom: 10px;
+  }
+
+  .payment-content-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .payment-right {
+    margin-top: 20px;
+    min-width: auto;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .payment-qr-code {
+    max-width: 150px;
   }
 }
 
