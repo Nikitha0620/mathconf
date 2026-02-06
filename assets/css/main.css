@@ -4107,6 +4107,19 @@ table.tableizer-table {
     padding: 80px 0;
   }
 
+  .cfp-buttons-container {
+    gap: 8px !important;
+  }
+
+  .btn-submit-cfp {
+    padding: 8px 15px;
+    font-size: 0.75rem;
+    display: inline-block;
+    margin: 0;
+    white-space: nowrap;
+    flex: 0 1 auto;
+  }
+
   .topics-heading {
     font-size: 1.5rem;
   }
