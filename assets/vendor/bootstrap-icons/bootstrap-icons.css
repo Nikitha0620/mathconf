@@ -1470,8 +1470,6 @@ url("fonts/bootstrap-icons0107.woff?dd67030699838ea613ee6dbda90effa6") format("w
 .bi-plus-slash-minus::before { content: "\f6aa"; }
 .bi-projector-fill::before { content: "\f6ab"; }
 .bi-projector::before { content: "\f6ac"; }
-.bi-qr-code-scan::before { content: "\f6ad"; }
-.bi-qr-code::before { content: "\f6ae"; }
 .bi-quora::before { content: "\f6af"; }
 .bi-quote::before { content: "\f6b0"; }
 .bi-robot::before { content: "\f6b1"; }

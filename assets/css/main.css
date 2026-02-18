@@ -3611,13 +3611,6 @@ table.tableizer-table {
   margin-top: 30px;
 }
 
-.payment-qr-code {
-  max-width: 180px;
-  height: auto;
-  border-radius: 5px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
 .payment-link {
   color: #d4af37;
   font-weight: 600;
@@ -3731,9 +3724,7 @@ table.tableizer-table {
     justify-content: center;
   }
 
-  .payment-qr-code {
-    max-width: 150px;
-  }
+  
 }
 
 @media (max-width: 480px) {
