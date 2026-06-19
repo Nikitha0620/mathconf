@@ -114,7 +114,7 @@
         <!-- Countdown -->
         <div class="countdown-wrapper">
 
-          <div class="countdown-label">
+          <div id="msg" class="countdown-label">
             ABSTRACT SUBMISSION CLOSES IN
           </div>
 
@@ -570,13 +570,13 @@ managed through the CMT(Conference Management Toolkit) Portal.</p>
               <div class="col-lg-4 col-md-12">
                 <div class="agent-card">
                   <div class="agent-profile">
-                    <img src="assets/images/anwar.jpg" alt="Agent Profile" class="agent-photo">
+                    <img src="assets/images/mahadevan.jpg" alt="Agent Profile" class="agent-photo">
                     <div class="agent-info">
-                      <h4>Dr. Anwar Alwardi</h4>
-                      <p>Professor</p>
+                      <h4>Dr. G. Mahadevan</h4>
+                      <p>Professor & Head</p>
                       <div class="agent-rating">
 
-                        <span class="rating-text">University of Aden, Yemen</span>
+                        <span class="rating-text">The Gandhigram Rural Institute(Deemed to be University)</span>
                       </div>
                     </div>
                   </div>
@@ -1114,27 +1114,38 @@ managed through the CMT(Conference Management Toolkit) Portal.</p>
 
 </body>
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    function updateCountdown() {
-      const deadline = new Date('June 15, 2026 23:59:59').getTime();
-      const now = new Date().getTime();
-      const distance = deadline - now;
+document.addEventListener("DOMContentLoaded", function () {
+  function updateCountdown() {
+    const deadline = new Date('June 15, 2026 23:59:59').getTime();
+    const now = new Date().getTime();
+    const distance = deadline - now;
 
-      if (distance > 0) {
-        document.getElementById('days').textContent =
-          String(Math.floor(distance / (1000 * 60 * 60 * 24))).padStart(2, '0');
-        document.getElementById('hours').textContent =
-          String(Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(2, '0');
-        document.getElementById('minutes').textContent =
-          String(Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
-        document.getElementById('seconds').textContent =
-          String(Math.floor((distance % (1000 * 60)) / 1000)).padStart(2, '0');
-      }
+    if (distance > 0) {
+      document.getElementById('days').textContent =
+        String(Math.floor(distance / (1000 * 60 * 60 * 24))).padStart(2, '0');
+
+      document.getElementById('hours').textContent =
+        String(Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(2, '0');
+
+      document.getElementById('minutes').textContent =
+        String(Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
+
+      document.getElementById('seconds').textContent =
+        String(Math.floor((distance % (1000 * 60)) / 1000)).padStart(2, '0');
     }
+    else {
+    document.getElementById('days').textContent = '00';
+    document.getElementById('hours').textContent = '00';
+    document.getElementById('minutes').textContent = '00';
+    document.getElementById('seconds').textContent = '00';
 
-    updateCountdown();
-    setInterval(updateCountdown, 1000);
-  });
+    document.getElementById('msg').textContent = 'Abstract Submission Closed';
+  }
+  }
+
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+});
 </script>
 
 
